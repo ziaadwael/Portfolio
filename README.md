@@ -1,5 +1,7 @@
 # 🌐 Ziad Wael – Portfolio
 
+!(Portfolio Screenshot)[./Portfolio.png]
+
 Welcome to the source code of my personal portfolio website.  
 This portfolio showcases my front-end development skills, selected projects, and experience as a creative software engineer.
 
