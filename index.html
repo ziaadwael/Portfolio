@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Ziad Wael - Frontend Developer Portfolio"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Ziad Wael | Frontend Developer</title>
+    <!-- Font Awesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <!-- TailwindCSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Animate.css CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#F79D1B",
+              secondary: "#2C3E50",
+              accent: "#FEC506",
+              bgDark: "#121212",
+              textLight: "#E0E0E0",
+              cardBg: "#1E1E1E",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-bgDark text-textLight font-sans scroll-smooth">
+    <style>
+      /* Style for active burger button */
+      #nav-toggle.active svg {
+        stroke: #f79d1b; /* primary color */
+        transform: rotate(90deg);
+        transition: transform 0.3s ease, stroke 0.3s ease;
+      }
+
+      /* Optional: animate burger lines to cross (hamburger to X) */
+      #nav-toggle.active svg path {
+        stroke: #f79d1b;
+      }
+
+      /* Background color change when menu is active */
+      body.menu-active-bg {
+        background-color: #2c3e50; /* secondary color */
+        transition: background-color 0.3s ease;
+      }
+    </style>
+    <!-- Header -->
+    <header
+      class="px-[5rem] bg-secondary text-textLight sticky top-0 z-50 shadow-md"
+    >
+      <div class="container mx-auto flex justify-between items-center p-4">
+        <h1 class="text-2xl text-primary font-bold tracking-wide">Ziad Wael</h1>
+        <nav>
+          <ul id="nav-links" class="hidden md:flex space-x-8 font-semibold">
+            <li><a href="#home" class="hover:text-primary">Home</a></li>
+            <li><a href="#about" class="hover:text-primary">About</a></li>
+            <li><a href="#skills" class="hover:text-primary">Skills</a></li>
+            <li><a href="#projects" class="hover:text-primary">Projects</a></li>
+            <li><a href="#contact" class="hover:text-primary">Contact</a></li>
+          </ul>
+          <button
+            id="nav-toggle"
+            aria-label="Toggle navigation"
+            class="md:hidden"
+          >
+            <svg
+              class="w-8 h-8 text-textLight"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </nav>
+      </div>
+
+      <!-- Mobile Menu -->
+      <ul
+        id="mobile-menu"
+        class="md:hidden hidden absolute top-full left-0 w-full bg-bgDark text-textLight px-6 py-5 space-y-4 text-base font-medium rounded-b-xl shadow-lg z-40 transition-all duration-300"
+      >
+        <li>
+          <a href="#home" class="block hover:text-primary transition">Home</a>
+        </li>
+        <li>
+          <a href="#about" class="block hover:text-primary transition">About</a>
+        </li>
+        <li>
+          <a href="#skills" class="block hover:text-primary transition"
+            >Skills</a
+          >
+        </li>
+        <li>
+          <a href="#projects" class="block hover:text-primary transition"
+            >Projects</a
+          >
+        </li>
+        <li>
+          <a href="#contact" class="block hover:text-primary transition"
+            >Contact</a
+          >
+        </li>
+      </ul>
+    </header>
+
+    <!-- Hero Sectio -->
+    <section
+      id="home"
+      class="px-[5rem] container mx-auto flex flex-col md:flex-row items-center justify-between py-16 px-4 animate__animated animate__fadeIn"
+    >
+      <div class="md:w-1/2 space-y-6">
+        <h2 class="text-3xl font-extrabold text-primary">Hi, I'm Ziad Wael</h2>
+        <p class="text-lg text-textLight">
+          Frontend Developer passionate about building modern, responsive, and
+          user-friendly web applications.
+        </p>
+        <a
+          href="#projects"
+          class="inline-block bg-primary text-gray-700 px-6 py-3 rounded-lg font-semibold hover:bg-accent"
+        >
+          View My Work
+        </a>
+      </div>
+      <div class="md:w-1/2 mt-10 md:mt-0 flex justify-center">
+        <img
+          src="./myPhoto.jpg"
+          alt="Ziad Wael"
+          class="rounded-full shadow-lg w-64 h-64 object-cover animate__animated animate__zoomIn"
+        />
+      </div>
+    </section>
+    <!-- About Section -->
+    <section
+      id="about"
+      class="px-[5rem] container mx-auto rounded-lg bg-cardBg p-8 mb-12 shadow animate__animated animate__fadeInUp"
+    >
+      <h2
+        class="text-3xl font-bold mb-6 border-b-4 border-primary inline-block pb-1"
+      >
+        About Me
+      </h2>
+      <p class="text-textLight text-lg leading-relaxed">
+        I am a frontend developer with experience in HTML, CSS, JavaScript, and
+        modern frameworks. I enjoy crafting clean and efficient code and
+        continuously learning new technologies to improve user experiences.
+      </p>
+    </section>
+    <!-- Skills Section -->
+    <section
+      id="skills"
+      class="px-[5rem] container mx-auto rounded-lg bg-cardBg p-8 mb-12 shadow animate__animated animate__fadeInUp"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+    >
+      <h2
+        class="text-3xl font-bold mb-6 border-b-4 border-primary inline-block pb-1"
+        data-aos="fade-right"
+        data-aos-delay="200"
+      >
+        Skills
+      </h2>
+
+      <ul
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 text-primary font-semibold"
+      >
+        <li
+          class="bg-secondary rounded-xl px-6 py-4 shadow-lg flex items-center gap-3 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
+          data-aos="zoom-in"
+          data-aos-delay="100"
+        >
+          <i class="fab fa-html5 text-3xl text-orange-500"></i> HTML5 &amp; CSS3
+        </li>
+
+        <li
+          class="bg-secondary rounded-xl px-6 py-4 shadow-lg flex items-center gap-3 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
+          data-aos="zoom-in"
+          data-aos-delay="200"
+        >
+          <i class="fab fa-js text-3xl text-yellow-400"></i> JavaScript (ES6+)
+        </li>
+
+        <li
+          class="bg-secondary rounded-xl px-6 py-4 shadow-lg flex items-center gap-3 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
+          data-aos="zoom-in"
+          data-aos-delay="300"
+        >
+          <i class="fab fa-bootstrap text-3xl text-purple-600"></i> Bootstrap
+        </li>
+
+        <li
+          class="bg-secondary rounded-xl px-6 py-4 shadow-lg flex items-center gap-3 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
+          data-aos="zoom-in"
+          data-aos-delay="400"
+        >
+          <img
+            src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg"
+            class="w-8 h-8"
+            alt="Tailwind"
+          />
+          TailwindCSS
+        </li>
+
+        <li
+          class="bg-secondary rounded-xl px-6 py-4 shadow-lg flex items-center gap-3 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
+          data-aos="zoom-in"
+          data-aos-delay="500"
+        >
+          <i class="fab fa-sass text-3xl text-pink-500"></i> SCSS
+        </li>
+
+        <li
+          class="bg-secondary rounded-xl px-6 py-4 shadow-lg flex items-center gap-3 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
+          data-aos="zoom-in"
+          data-aos-delay="600"
+        >
+          <i class="fab fa-react text-3xl text-cyan-400"></i> React.js
+        </li>
+
+        <li
+          class="bg-secondary rounded-xl px-6 py-4 shadow-lg flex items-center gap-3 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
+          data-aos="zoom-in"
+          data-aos-delay="700"
+        >
+          <img
+            src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg"
+            class="w-8 h-8"
+            alt="Postman"
+          />
+          Postman
+        </li>
+
+        <li
+          class="bg-secondary rounded-xl px-6 py-4 shadow-lg flex items-center gap-3 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
+          data-aos="zoom-in"
+          data-aos-delay="800"
+        >
+          <i class="fas fa-plug text-3xl text-blue-400"></i> API Integration
+        </li>
+
+        <li
+          class="bg-secondary rounded-xl px-6 py-4 shadow-lg flex items-center gap-3 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
+          data-aos="zoom-in"
+          data-aos-delay="900"
+        >
+          <i class="fab fa-npm text-3xl text-red-600"></i> npm &amp; yarn
+        </li>
+
+        <li
+          class="bg-secondary rounded-xl px-6 py-4 shadow-lg flex items-center gap-3 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
+          data-aos="zoom-in"
+          data-aos-delay="1000"
+        >
+          <i class="fas fa-mobile-alt text-3xl text-green-400"></i> Responsive
+          Design
+        </li>
+
+        <li
+          class="bg-secondary rounded-xl px-6 py-4 shadow-lg flex items-center gap-3 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
+          data-aos="zoom-in"
+          data-aos-delay="1100"
+        >
+          <i class="fab fa-git-alt text-3xl text-orange-600"></i> Git &amp;
+          Version Control
+        </li>
+      </ul>
+    </section>
+
+    <!-- Projects Section -->
+    <section
+      id="projects"
+      class="container mx-auto max-w-7xl rounded-lg bg-cardBg p-6 sm:p-8 mb-12 shadow animate__animated animate__fadeInUp"
+    >
+      <h2
+        class="text-3xl font-bold mb-6 border-b-4 border-primary inline-block pb-1"
+      >
+        Projects
+      </h2>
+      <div
+        id="projects-container"
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8"
+      >
+        <!-- JS will inject projects here -->
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section
+      id="contact"
+      class="px-[5rem] container mx-auto rounded-lg bg-cardBg p-8 mb-12 shadow animate__animated animate__fadeInUp"
+    >
+      <h2
+        class="text-3xl font-bold mb-6 border-b-4 border-primary inline-block pb-1"
+      >
+        Contact Me
+      </h2>
+
+      <p class="text-textLight mb-6">
+        Feel free to reach out via email or follow me on social media.
+      </p>
+
+      <!-- Contact Icons with Style -->
+      <div class="flex gap-6">
+        <!-- WhatsApp -->
+        <a
+          href="https://wa.me/+201146991990"
+          target="_blank"
+          aria-label="WhatsApp"
+          class="bg-secondary hover:bg-primary text-white rounded-full w-14 h-14 flex items-center justify-center shadow-lg transition duration-300 transform hover:scale-110"
+        >
+          <i class="fab fa-whatsapp text-2xl"></i>
+        </a>
+
+        <!-- Email -->
+        <a
+          href="mailto:ziadwaelelfeky@gmail.com"
+          target="_blank"
+          aria-label="Email"
+          class="bg-secondary hover:bg-primary text-white rounded-full w-14 h-14 flex items-center justify-center shadow-lg transition duration-300 transform hover:scale-110"
+        >
+          <i class="fa-regular fa-envelope"></i>
+        </a>
+
+        <!-- GitHub -->
+        <a
+          href="https://github.com/ziaadwael"
+          target="_blank"
+          aria-label="GitHub"
+          class="bg-secondary hover:bg-primary text-white rounded-full w-14 h-14 flex items-center justify-center shadow-lg transition duration-300 transform hover:scale-110"
+        >
+          <i class="fab fa-github text-2xl"></i>
+        </a>
+
+        <!-- LinkedIn -->
+        <a
+          href="#"
+          target="_blank"
+          aria-label="LinkedIn"
+          class="bg-secondary hover:bg-primary text-white rounded-full w-14 h-14 flex items-center justify-center shadow-lg transition duration-300 transform hover:scale-110"
+        >
+          <i class="fab fa-linkedin-in text-2xl"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer
+      class="bg-cardBg text-white text-center py-4 font-semibold border-t-4 border-primary"
+    >
+      &copy; 2025 Ziad Wael. All rights reserved.
+    </footer>
+    <script src="./main.js"></script>
+  </body>
+</html>
